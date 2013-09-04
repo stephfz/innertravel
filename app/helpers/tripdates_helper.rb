@@ -1,0 +1,2 @@
+module TripdatesHelper
+end

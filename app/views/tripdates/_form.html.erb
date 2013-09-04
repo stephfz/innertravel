@@ -1,0 +1,21 @@
+<%= form_for(@tripdate) do |f| %>
+  <% if @tripdate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tripdate.errors.count, "error") %> prohibited this tripdate from being saved:</h2>
+
+      <ul>
+      <% @tripdate.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tdate %><br />
+    <%= f.text_field :tdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

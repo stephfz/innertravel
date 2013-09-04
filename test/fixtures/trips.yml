@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  departing: MyString
+  returning: MyString
+  setsavailable: 1
+
+two:
+  departing: MyString
+  returning: MyString
+  setsavailable: 1

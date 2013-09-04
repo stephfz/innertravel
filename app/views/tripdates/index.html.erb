@@ -1,0 +1,23 @@
+<h1>Listing tripdates</h1>
+
+<table>
+  <tr>
+    <th>Tdate</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tripdates.each do |tripdate| %>
+  <tr>
+    <td><%= tripdate.tdate %></td>
+    <td><%= link_to 'Show', tripdate %></td>
+    <td><%= link_to 'Edit', edit_tripdate_path(tripdate) %></td>
+    <td><%= link_to 'Destroy', tripdate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tripdate', new_tripdate_path %>
