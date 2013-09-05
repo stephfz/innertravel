@@ -1,3 +1,3 @@
 class Tripdate < ActiveRecord::Base
-  attr_accessible :tdate
+  attr_accessible :tdate, :id
 end
