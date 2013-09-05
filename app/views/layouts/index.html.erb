@@ -1,14 +1,19 @@
-<h1>index</h1>
+<h1>test_alpha</h1>
 
 
 
-<div id="Search">
+<%= form_tag("/search", method: "get") do %>
 
-
-<label>Departing</label>
+<%= label_tag(:d, "Departing: ")%>
 <%= collection_select(:depart_date, :id, @dates_depart, :id, :tdate, {:prompt => true})%>
+</p>
+<%= label_tag(:r, "Returning: ")%>
+<%= collection_select(:return_date, :id, @dates_depart, :id, :tdate, {:prompt => true})%>
+</p>
+<%= label_tag(:p, "Promotion Code") %>
+<%= text_field_tag(:promocode) %> 
+</p>
+    <%= submit_tag("Search") %>
 
+<% end %>
 
-
-
-</div>
