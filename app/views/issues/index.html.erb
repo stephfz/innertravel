@@ -6,7 +6,7 @@
     <th>Description</th>
     <th>Severity</th>
     <th></th>
-    <th></th>
+    
   </tr>
 
 <% @issues.each do |issue| %>
@@ -15,7 +15,7 @@
     <td><%= issue.description %></td>
     <td><%= Severity.find_by_id(issue.severity).description %></td>
     <td><%= link_to 'Show', issue %></td>
-    <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
   </tr>
 <% end %>
 </table>
