@@ -3,7 +3,7 @@ class IssuesController < ApplicationController
   # GET /issues.json
   def index
     @issues = Issue.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @issues }
@@ -25,7 +25,7 @@ class IssuesController < ApplicationController
   # GET /issues/new.json
   def new
     @issue = Issue.new
-
+    @severities = Severity.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @issue }
@@ -33,9 +33,9 @@ class IssuesController < ApplicationController
   end
 
   # GET /issues/1/edit
-  def edit
-    @issue = Issue.find(params[:id])
-  end
+
+
+
 
   # POST /issues
   # POST /issues.json
@@ -44,8 +44,8 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.save
-        format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
-        format.json { render json: @issue, status: :created, location: @issue }
+        format.html { redirect_to issues_url, notice: 'Issue was successfully created.' }
+        
       else
         format.html { render action: "new" }
         format.json { render json: @issue.errors, status: :unprocessable_entity }
@@ -60,7 +60,7 @@ class IssuesController < ApplicationController
 
     respond_to do |format|
       if @issue.update_attributes(params[:issue])
-        format.html { redirect_to @issue, notice: 'Issue was successfully updated.' }
+        format.html { redirect_to issues_url, notice: 'Issue was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,6 +73,7 @@ class IssuesController < ApplicationController
   # DELETE /issues/1.json
   def destroy
     @issue = Issue.find(params[:id])
+
     @issue.destroy
 
     respond_to do |format|
